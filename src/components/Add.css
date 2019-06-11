@@ -1,0 +1,32 @@
+.add
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.add-button
+{
+  background-color: rgba(112, 72, 58, 0) !important;
+}
+.add-button>i
+{
+    font-weight: bold;
+    background-color: #2B1A51;
+    transition: 0.3s all;
+}
+.add-button>i:hover
+{
+    animation: rotation 0.6s ease-in-out;
+}
+
+@keyframes rotation {
+from
+{
+  transform: rotate(0deg);
+}
+to
+{
+  transform: rotate(360deg);
+}
+}
