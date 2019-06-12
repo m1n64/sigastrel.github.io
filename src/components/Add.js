@@ -2,6 +2,9 @@ import React from "react";
 import './Add.css';
 
 import axios from "axios";
+
+import {saveUser} from "../functions/ServerApi";
+
 class Add extends React.Component{
 
   constructor(props) {
@@ -10,9 +13,7 @@ class Add extends React.Component{
   }
 
   async addSinper() {
-    await axios.post("https://sigarretsniper.brickweb.ru/saveUser.php", {token: localStorage.getItem("token"), name: "Test1"})
-        .then((res)=>{});
-
+    await saveUser("Test2");
     // this.props.redrawSnipers();
   }
 
