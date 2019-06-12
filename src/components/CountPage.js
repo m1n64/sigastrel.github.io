@@ -54,7 +54,7 @@ class CountPage extends React.Component{
             <h4 className="list-text">СПИСОК СТРЕЛКОВ</h4>
             {/*<Counter name={'Пользователь 1'}/>*/}
               {this.state.Snipers.map((el, i)=>
-                  <Counter key={i}
+                  <Counter key={el.sigars_id}
                         id={el.sigars_id}
                         name={el.sigars_name}
                         num={el.sigars_num}
