@@ -1,4 +1,4 @@
-import React from "react";
+import React, {PropTypes} from "react";
 import './Counter.css'
 import {CSSTransition} from 'react-transition-group';
 
@@ -8,25 +8,17 @@ class Counter extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      Snipers: [],
-    };
-
   };
 
-  updateUser = (id, num)=>{
-    axios.post("https://sigarretsniper.brickweb.ru/updateUser.php", {id: id, token: localStorage.getItem("token"), num: num})
-        .then();
-  };
 
   render() {
         var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
     return(
       <div>
-        {this.props.snipers.map((el, index)=>
+        {/*{this.props.snipers.map((el, index)=>*/}
       <ReactCSSTransitionGroup transitionName = "example"
          transitionAppear = {true} transitionAppearTimeout = {900}
-         transitionEnter = {false} transitionLeave = {false}  key={el.sigars_id}>
+         transitionEnter = {false} transitionLeave = {false}  key={this.props.id}>
 
 
 
@@ -35,23 +27,17 @@ class Counter extends React.Component{
                 <div className="user-image"></div>
 
                 <div className="user-name">
-                  <p>{el.sigars_name}</p>
+                  <p>{this.props.name}</p>
                 </div>
                   <button className="count-but"
-                    onClick={start=>{
-                        this.setState({
-                          Snipers: [...this.state.Snipers.slice(0, index, el.sigars_num > 0 ? el.sigars_num-- : 0), ...this.state.Snipers.slice(index)],
-                        });
-                        this.updateUser(el.sigars_id, el.sigars_num);
+                    onClick={()=>{
+                      this.props.decSigar(this.props.index, this.props.num, this.props.id);
                     }}>
                     -</button>
-                       <div className="counter">{el.sigars_num}</div>
+                       <div className="counter">{this.props.num}</div>
                   <button className="count-but"
                     onClick={()=>{
-                        this.setState({
-                          Snipers: [...this.state.Snipers.slice(0, index, el.sigars_num++), ...this.state.Snipers.slice(index)],
-                        });
-                        this.updateUser(el.sigars_id, el.sigars_num);
+                      this.props.incSigar(this.props.index, this.props.num, this.props.id);
                     }}>
                     +</button>
               </div>
@@ -59,7 +45,7 @@ class Counter extends React.Component{
         </div>
 
       </ReactCSSTransitionGroup>
-        )}
+        {/*)}*/}
       </div>
     );
   }

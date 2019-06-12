@@ -12,6 +12,8 @@ class Add extends React.Component{
   async addSinper() {
     await axios.post("https://sigarretsniper.brickweb.ru/saveUser.php", {token: localStorage.getItem("token"), name: "Test1"})
         .then((res)=>{});
+
+    // this.props.redrawSnipers();
   }
 
   render(){
