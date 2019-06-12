@@ -25,10 +25,8 @@ class CountPage extends React.Component{
           .then((res)=>{
               if (res.data.toString().trim() !== "no_data_in_table") {
                   this.setState({Snipers: res.data});
-              }
+              } else this.setState({Snipers: []});
           });
-
-      console.log(this);
   }
 
   async addSinper() {
