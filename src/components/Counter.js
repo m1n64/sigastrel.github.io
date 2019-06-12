@@ -14,13 +14,11 @@ class Counter extends React.Component{
   render() {
         var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
     return(
-      <div>
+      <div key={this.props.id}>
         {/*{this.props.snipers.map((el, index)=>*/}
       <ReactCSSTransitionGroup transitionName = "example"
          transitionAppear = {true} transitionAppearTimeout = {900}
-         transitionEnter = {false} transitionLeave = {false}  key={this.props.id}>
-
-
+         transitionEnter = {false} transitionLeave = {false}>
 
             <div className="content-counter">
               <div className="main-counter">

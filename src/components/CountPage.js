@@ -20,13 +20,15 @@ class CountPage extends React.Component{
     this.addSinper = this.addSinper.bind(this);
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
       await axios.post("https://sigarretsniper.brickweb.ru/getUsers.php", {token: localStorage.getItem("token")})
           .then((res)=>{
               if (res.data.toString().trim() !== "no_data_in_table") {
                   this.setState({Snipers: res.data});
               }
           });
+
+      console.log(this);
   }
 
   async addSinper() {
@@ -34,10 +36,8 @@ class CountPage extends React.Component{
         // this.componentWillMount();
   }
 
-
-
   redrawSnipers = ()=>{
-      this.componentWillMount();
+      this.componentDidMount();
   };
 
   incSigar = (index, num, id)=>{
@@ -56,7 +56,7 @@ class CountPage extends React.Component{
             <h4 className="list-text">СПИСОК СТРЕЛКОВ</h4>
             {/*<Counter name={'Пользователь 1'}/>*/}
               {this.state.Snipers.map((el, i)=>
-                  <Counter
+                  <Counter key={i}
                         id={el.sigars_id}
                         name={el.sigars_name}
                         num={el.sigars_num}
