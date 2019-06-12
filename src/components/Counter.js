@@ -23,11 +23,12 @@ class Counter extends React.Component{
         var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
     return(
       <div>
+        {this.props.snipers.map((el, index)=>
       <ReactCSSTransitionGroup transitionName = "example"
          transitionAppear = {true} transitionAppearTimeout = {900}
-         transitionEnter = {false} transitionLeave = {false}>
+         transitionEnter = {false} transitionLeave = {false}  key={el.sigars_id}>
 
-        {this.props.snipers.map((el, index)=>
+
 
             <div className="content-counter">
               <div className="main-counter">
@@ -37,7 +38,7 @@ class Counter extends React.Component{
                   <p>{el.sigars_name}</p>
                 </div>
                   <button className="count-but"
-                    onClick={()=>{
+                    onClick={start=>{
                         this.setState({
                           Snipers: [...this.state.Snipers.slice(0, index, el.sigars_num > 0 ? el.sigars_num-- : 0), ...this.state.Snipers.slice(index)],
                         });
@@ -56,8 +57,9 @@ class Counter extends React.Component{
               </div>
 
         </div>
-        )}
+
       </ReactCSSTransitionGroup>
+        )}
       </div>
     );
   }
