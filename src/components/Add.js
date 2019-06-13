@@ -15,6 +15,7 @@ class Add extends React.Component{
   async addSinper() {
     await saveUser("Test2");
     // this.props.redrawSnipers();
+    //loh
   }
 
   render(){

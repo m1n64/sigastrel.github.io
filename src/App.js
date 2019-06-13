@@ -23,9 +23,9 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-      <Route exact path='/' component={MainPage}/>
-      <Route path='/CountPage' component={CountPage}/>
-       </Switch>
+            <Route exact path='/' component={MainPage}/>
+            <Route path='/CountPage' component={CountPage}/>
+        </Switch>
         </div>
       );
   }

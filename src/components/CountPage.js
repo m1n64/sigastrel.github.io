@@ -60,6 +60,7 @@ class CountPage extends React.Component{
                         num={el.sigars_num}
                         index={i}
 
+
                         incSigar={this.incSigar}
                         decSigar={this.decSigar}
                     />
