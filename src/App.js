@@ -26,7 +26,8 @@ class App extends React.Component {
         <Switch>
             <Route exact path='/' component={MainPage}/>
             <Route path='/CountPage' component={CountPage}/>
-        </div>
+        </Switch>
+      </div>
       );
   }
 }
