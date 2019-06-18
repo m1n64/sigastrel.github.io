@@ -22,7 +22,11 @@ class Counter extends React.Component{
 
             <div className="content-counter">
               <div className="main-counter">
-                <div className="user-image"></div>
+                <div className="user-image"
+                  onClick={()=>{
+                    this.props.removeSigar(this.props.id);
+                  }}
+                ><i className="material-icons">close</i></div>
 
                 <div className="user-name">
                   <p>{this.props.name}</p>
@@ -49,5 +53,6 @@ class Counter extends React.Component{
   }
 }
 
+//jdkjkd
 
 export default Counter;
