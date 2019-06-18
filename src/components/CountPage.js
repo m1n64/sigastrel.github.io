@@ -2,7 +2,6 @@ import React, {PropTypes} from "react";
 import Counter from './Counter';
 import Add from './Add';
 import './CountPage.css';
-// import './Add.css';
 
 import axios from "axios";
 

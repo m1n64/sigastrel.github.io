@@ -11,7 +11,7 @@ function MainPage(){
         <div className="row content">
 
       <div className="col s12 m6">
-
+        <img src="" alt=""/>
       </div>
 
       <div className="col s12 m6">

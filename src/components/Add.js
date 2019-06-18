@@ -17,6 +17,7 @@ class Add extends React.Component{
     // alert(this.state.name);
     this.state.name !== "" && await saveUser(this.state.name);
     this.setState({name: ""});
+    // this.props.redrawSnipers();
     //loh
   }
 
