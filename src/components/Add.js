@@ -8,10 +8,15 @@ class Add extends React.Component{
   constructor(props) {
     super(props);
     this.addSinper = this.addSinper.bind(this);
+    this.state = {
+      name: "",
+    }
   }
 
   async addSinper() {
-    await saveUser("Test2");
+    // alert(this.state.name);
+    this.state.name !== "" && await saveUser(this.state.name);
+    this.setState({name: ""});
     // this.props.redrawSnipers();
     //loh
   }
@@ -29,9 +34,11 @@ class Add extends React.Component{
     return(
       <div className="add">
         <Modal className="modal" actions={ButOnClose} header="Добавить стрелка" trigger={trigger}>
-          <TextInput className="input-field" label="Введите имя" data-length={15} />
-     <a className="add-link">Добавить</a>
-  </Modal>
+          <TextInput className="input-field" label="Введите имя" data-length={15} value={this.state.name} onChange={(e)=>
+              this.setState({name: e.target.value})
+          }/>
+          <a className="add-link" onClick={()=>this.addSinper()}>Добавить</a>
+        </Modal>
       </div>
     );
   }

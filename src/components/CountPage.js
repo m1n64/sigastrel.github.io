@@ -47,6 +47,10 @@ class CountPage extends React.Component{
       num > 0 ? updateUser(id, --num) : removeUser(id);
   };
 
+  removeSigar = (id)=>{
+      removeUser(id);
+  };
+
   render() {
     return (
         <div className="bg">
@@ -62,6 +66,7 @@ class CountPage extends React.Component{
 
                         incSigar={this.incSigar}
                         decSigar={this.decSigar}
+                        removeSigar={this.removeSigar}
                     />
                 )}
                 {/*<Counter snipers={this.state.Snipers}/>*/}
