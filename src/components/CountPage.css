@@ -8,7 +8,6 @@
 .bg
 {
   background: linear-gradient(to bottom, #2B1A52, #422EAB);
-  perspective: 1px;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -23,4 +22,3 @@
 ::-webkit-scrollbar-thumb:hover{
     background-color: #5a30a1;
 }
-/**/

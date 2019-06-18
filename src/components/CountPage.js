@@ -2,7 +2,6 @@ import React, {PropTypes} from "react";
 import Counter from './Counter';
 import Add from './Add';
 import './CountPage.css';
-// import './Add.css';
 
 import axios from "axios";
 
@@ -59,7 +58,6 @@ class CountPage extends React.Component{
                         name={el.sigars_name}
                         num={el.sigars_num}
                         index={i}
-
 
                         incSigar={this.incSigar}
                         decSigar={this.decSigar}
