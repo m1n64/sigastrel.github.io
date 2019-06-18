@@ -6,6 +6,7 @@ import './CountPage.css';
 import axios from "axios";
 
 import {saveUser, removeUser, updateUser} from "../functions/ServerApi";
+import {Link} from "react-router-dom";
 
 class CountPage extends React.Component{
 
@@ -66,6 +67,9 @@ class CountPage extends React.Component{
                 {/*<Counter snipers={this.state.Snipers}/>*/}
                 <Add redrawSniper={this.redrawSnipers()}/>
           </div>
+           <div className="container">
+                <Link to='/Settings' className="settings--link">Настройки</Link>
+           </div>
         </div>
     );
   }

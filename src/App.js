@@ -1,6 +1,7 @@
 import React from 'react';
 import CountPage from './components/CountPage';
 import MainPage from './components/MainPage';
+import SettingsPage from "./components/SettingsPage";
 // import './App.css';
 import {Switch, Route} from 'react-router-dom';
 import RandomTokenGenerate from "./functions/RandomTokenGenerator";
@@ -25,7 +26,6 @@ class App extends React.Component {
         <Switch>
             <Route exact path='/' component={MainPage}/>
             <Route path='/CountPage' component={CountPage}/>
-        </Switch>
         </div>
       );
   }
